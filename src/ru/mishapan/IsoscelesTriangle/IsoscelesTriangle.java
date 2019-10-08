@@ -4,23 +4,30 @@ public class IsoscelesTriangle {
 
     private double side;
     private double base;
+    private double[] coordinates;
 
-    public IsoscelesTriangle(double a, double b, double c) throws Exception {
+    public IsoscelesTriangle(double[] coordinates) throws Exception {
 
-        if (!checkIsosceles(a, b, c)) {
-            throw new Exception("Triangle are not isosceles!");
+        if (coordinates.length != 6) {
+            throw new Exception("Quantity of coordinates are not six");
         }
 
-        if (a == b) {
-            setBase(c);
-            setSide(a);
-        } else {
-            setSide(c);
+        double[] sides = CoordinatesTransfer.toLength(coordinates);
 
-            if (c == a) {
-                setBase(b);
+        if (!checkIsosceles(sides[0], sides[1], sides[2])) {
+            throw new Exception("Triangle are not isosceles");
+        }
+
+        if (sides[0] == sides[1]) {
+            setBase(sides[2]);
+            setSide(sides[0]);
+        } else {
+            setSide(sides[2]);
+
+            if (sides[2] == sides[0]) {
+                setBase(sides[1]);
             } else {
-                setBase(a);
+                setBase(sides[0]);
             }
         }
     }
@@ -33,12 +40,20 @@ public class IsoscelesTriangle {
         this.side = side;
     }
 
+    private void setCoordinates(double[] coordinates) {
+        this.coordinates = coordinates;
+    }
+
     public double getBase() {
         return base;
     }
 
     public double getSide() {
         return side;
+    }
+
+    public double[] getCoordinates() {
+        return coordinates;
     }
 
     private boolean checkIsosceles(double a, double b, double c) {
