@@ -12,6 +12,7 @@ public class IsoscelesTriangle {
             throw new Exception("Quantity of coordinates are not six");
         }
 
+        setCoordinates(coordinates);
         double[] sides = CoordinatesTransfer.toLength(coordinates);
 
         if (!checkIsosceles(sides[0], sides[1], sides[2])) {
@@ -61,10 +62,18 @@ public class IsoscelesTriangle {
         return (a == b || b == c || a == c);
     }
 
-
     public double getSquare() {
 
         return 0.25 * base * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(base, 2));
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (double i : coordinates){
+            sb.append(i);
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
 }

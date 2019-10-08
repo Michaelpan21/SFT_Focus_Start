@@ -1,14 +1,17 @@
 package ru.mishapan.IsoscelesTriangle.IsoscelesTriangleTest;
 
 import ru.mishapan.IsoscelesTriangle.FileReaderWriter.FileReader;
+import ru.mishapan.IsoscelesTriangle.IsoscelesTriangle;
+
 
 public class IsoscelesTriangleTest {
     public static void main(String[] args) {
 
-        double[] coordinates = {0, 0, 4, 8, 8, 0};
+        FileReader fileIn = new FileReader();
+        fileIn.readAndSave("input.txt");
 
-        FileReader fileReader = new FileReader();
-        fileReader.read("input.txt");
-
+        for(IsoscelesTriangle triangle : fileIn.getList()){
+            System.out.println("C: " + triangle.toString() + " Sq: " + triangle.getSquare());
+        }
     }
 }
