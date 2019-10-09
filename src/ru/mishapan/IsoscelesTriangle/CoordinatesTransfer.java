@@ -2,10 +2,10 @@ package ru.mishapan.IsoscelesTriangle;
 
 public class CoordinatesTransfer {
 
-    public static double[] toLength(double[] coordinates) throws Exception{
+    public static double[] toLength(double[] coordinates) throws ArrayIndexOutOfBoundsException{
 
         if (coordinates.length != 6) {
-            throw new Exception("Quantity coordinates error!");
+            throw new ArrayIndexOutOfBoundsException("Quantity of coordinates are not six");
         }
 
         double[] sides = new double[3];

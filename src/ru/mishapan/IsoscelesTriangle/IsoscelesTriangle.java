@@ -6,17 +6,18 @@ public class IsoscelesTriangle {
     private double base;
     private double[] coordinates;
 
-    public IsoscelesTriangle(double[] coordinates) throws Exception {
+    public IsoscelesTriangle(double[] coordinates)
+            throws ArrayIndexOutOfBoundsException, IllegalArgumentException {
 
         if (coordinates.length != 6) {
-            throw new Exception("Quantity of coordinates are not six");
+            throw new ArrayIndexOutOfBoundsException("Quantity of coordinates are not six");
         }
 
         setCoordinates(coordinates);
         double[] sides = CoordinatesTransfer.toLength(coordinates);
 
         if (!checkIsosceles(sides[0], sides[1], sides[2])) {
-            throw new Exception("Triangle are not isosceles");
+            throw new IllegalArgumentException("Triangle are not isosceles");
         }
 
         if (sides[0] == sides[1]) {

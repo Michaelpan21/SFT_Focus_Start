@@ -7,30 +7,34 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class FileReader {
 
     private List<IsoscelesTriangle> list = new LinkedList<>();
+    private Logger lg = new Logger();
 
     public void readAndSave(String path) {
 
         try (BufferedReader bf = new BufferedReader(new java.io.FileReader(path))) {
 
+            int counter = 0;
             String fileLine;
+
             while ((fileLine = bf.readLine()) != null) {
-
-                double[] coordinates = new double[6];
-
-                int i = 0;
-                for (String str : fileLine.split(" ")) {
-                    coordinates[i] = Double.parseDouble(str);
-                    i++;
-                }
-
+                counter++;
                 try {
+                    double[] coordinates = new double[6];
+
+                    int i = 0;
+                    for (String str : fileLine.split(" ")) {
+                        coordinates[i] = Double.parseDouble(str);
+                        i++;
+                    }
+
                     IsoscelesTriangle triangle = new IsoscelesTriangle(coordinates);
                     saveIfTheLargest(triangle);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    lg.write(counter + "   " + ex.getMessage());
                 }
             }
 
@@ -42,16 +46,23 @@ public class FileReader {
 
     private void saveIfTheLargest(IsoscelesTriangle triangle) {
 
+        if (triangle == null) {
+            return;
+        }
+
         if (list.size() == 0) {
+            list.add(triangle);
+            return;
+        }
+
+        if (triangle.getSquare() == list.get(0).getSquare() &&
+                triangle.getCoordinates() != list.get(0).getCoordinates()) {
             list.add(triangle);
             return;
         }
 
         if (triangle.getSquare() > list.get(0).getSquare()) {
             list.clear();
-            list.add(triangle);
-        }
-        if (triangle.getSquare() == list.get(0).getSquare()) {
             list.add(triangle);
         }
     }
