@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SFT Focus Start.iml" filepath="$PROJECT_DIR$/SFT Focus Start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SFTFocusStart.iml" filepath="$PROJECT_DIR$/SFTFocusStart.iml" />
     </modules>
   </component>
 </project>

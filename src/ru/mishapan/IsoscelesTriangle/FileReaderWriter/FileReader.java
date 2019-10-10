@@ -4,6 +4,7 @@ import ru.mishapan.IsoscelesTriangle.IsoscelesTriangle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class FileReader {
     public void readAndSave(String path) {
 
         try (BufferedReader bf = new BufferedReader(new java.io.FileReader(path))) {
+
+            System.out.println(" > Reading file at " + new Date() + "...");
 
             int counter = 0;
             String fileLine;
@@ -41,6 +44,8 @@ public class FileReader {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
+        System.out.println(" > File read at " + new Date());
 
     }
 

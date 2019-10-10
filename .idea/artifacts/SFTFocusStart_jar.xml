@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SFTFocusStart:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SFTFocusStart_jar</output-path>
+    <root id="archive" name="SFTFocusStart.jar">
+      <element id="module-output" name="SFTFocusStart" />
+    </root>
+  </artifact>
+</component>
