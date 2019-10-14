@@ -1,11 +1,20 @@
 package ru.mishapan.IsoscelesTriangle;
 
+/**
+ * Transfer coordinates
+ */
 public class CoordinatesTransfer {
 
-    public static double[] toLength(double[] coordinates) throws ArrayIndexOutOfBoundsException{
+    /**
+     * Transfers coordinates to triangle sides
+     *
+     * @param coordinates two-dimensional coordinates of triangle
+     * @return array of doubles that contains sides's lengths
+     */
+    public static double[] toLength(double[] coordinates) {
 
         if (coordinates.length != 6) {
-            throw new ArrayIndexOutOfBoundsException("Quantity of coordinates are not six");
+            throw new IllegalArgumentException("Quantity of coordinates are not six");
         }
 
         double[] sides = new double[3];

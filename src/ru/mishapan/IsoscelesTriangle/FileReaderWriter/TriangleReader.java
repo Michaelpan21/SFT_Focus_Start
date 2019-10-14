@@ -4,21 +4,30 @@ import ru.mishapan.IsoscelesTriangle.IsoscelesTriangle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Date;
-import java.util.LinkedList;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class FileReader {
+/**
+ * Reads stings from file and saves objects of IsoscelesTriangle class with the largest area
+ */
+public class TriangleReader {
 
-    private List<IsoscelesTriangle> list = new LinkedList<>();
+    private List<IsoscelesTriangle> list = new ArrayList<>();
     private Logger lg = new Logger();
 
+    /**
+     * Method reads strings from text file, splits up every and puts result to array of doubles
+     * Creates new IsoscelesTriangle instance with array as param and transfers it to method saveIfTheLargest
+     *
+     * @param path path of the input file
+     */
     public void readAndSave(String path) {
 
         try (BufferedReader bf = new BufferedReader(new java.io.FileReader(path))) {
 
-            System.out.println(" > Reading file at " + new Date() + "...");
+            System.out.println(" > Reading file at " + LocalDateTime.now() + "...");
 
             int counter = 0;
             String fileLine;
@@ -45,10 +54,19 @@ public class FileReader {
             ex.printStackTrace();
         }
 
-        System.out.println(" > File read at " + new Date());
+        System.out.println(" > File read at " + LocalDateTime.now());
 
     }
 
+
+    /**
+     * Method adds objects of IsoscelesTriangle class to list. If list is empty adds one object.
+     * If list isn't empty and area of object is equal to area of first object in list, adds this object to list.
+     * If list isn't empty and area of object bigger than area of first object in list, adds this object to cleaned
+     * list.
+     *
+     * @param triangle object of IsoscelesTriangle class
+     */
     private void saveIfTheLargest(IsoscelesTriangle triangle) {
 
         if (triangle == null) {
@@ -60,13 +78,13 @@ public class FileReader {
             return;
         }
 
-        if (triangle.getSquare() == list.get(0).getSquare() &&
+        if (triangle.getArea() == list.get(0).getArea() &&
                 triangle.getCoordinates() != list.get(0).getCoordinates()) {
             list.add(triangle);
             return;
         }
 
-        if (triangle.getSquare() > list.get(0).getSquare()) {
+        if (triangle.getArea() > list.get(0).getArea()) {
             list.clear();
             list.add(triangle);
         }

@@ -1,16 +1,26 @@
 package ru.mishapan.IsoscelesTriangle;
 
+/**
+ * Contains side, base and coordinates if isosceles triangle
+ * Checks if triangle is isosceles
+ * Calculates area
+ */
 public class IsoscelesTriangle {
 
     private double side;
     private double base;
     private double[] coordinates;
 
-    public IsoscelesTriangle(double[] coordinates)
-            throws ArrayIndexOutOfBoundsException, IllegalArgumentException {
+    /**
+     * Transfers coordinates to sides
+     * Checks if triangle is isosceles transfer sides to side and base.
+     *
+     * @param coordinates array of doubles contains coordinates of triangle
+     */
+    public IsoscelesTriangle(double[] coordinates) {
 
         if (coordinates.length != 6) {
-            throw new ArrayIndexOutOfBoundsException("Quantity of coordinates are not six");
+            throw new IllegalArgumentException("Quantity of coordinates are not six");
         }
 
         setCoordinates(coordinates);
@@ -58,23 +68,43 @@ public class IsoscelesTriangle {
         return coordinates;
     }
 
+    /**
+     * Checks Isosceles of triangle
+     *
+     * @param a side a
+     * @param b side b
+     * @param c side c
+     * @return true if triangle is isosceles
+     */
     private boolean checkIsosceles(double a, double b, double c) {
 
         return (a == b || b == c || a == c);
     }
 
-    public double getSquare() {
+    /**
+     * Calculates area of isosceles triangle if side and base are known
+     *
+     * @return area of isosceles triangle
+     */
+    public double getArea() {
 
         return 0.25 * base * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(base, 2));
     }
 
+    /**
+     * @return coordinates of triangle as string
+     */
     @Override
     public String toString() {
+
         StringBuilder sb = new StringBuilder();
-        for (double i : coordinates){
+        for (double i : getCoordinates()) {
             sb.append(i);
             sb.append(" ");
         }
+
+        sb.deleteCharAt(sb.toString().length() - 1);
+
         return sb.toString();
     }
 }
