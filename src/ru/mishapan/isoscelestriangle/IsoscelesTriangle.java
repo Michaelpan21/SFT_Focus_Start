@@ -1,5 +1,6 @@
 package ru.mishapan.isoscelestriangle;
 
+
 /**
  * Contains side, base and coordinates if isosceles triangle
  * Checks if triangle is isosceles

@@ -1,5 +1,6 @@
 package ru.mishapan.isoscelestriangle;
 
+
 /**
  * Transfer coordinates
  */

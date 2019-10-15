@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 
 public class Main {
 
+
     /**
      * Reads coordinates from file and save the largest
      * Writes coordinates to file

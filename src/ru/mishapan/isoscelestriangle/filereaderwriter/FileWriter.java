@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 /**
  * Writes strings to file
  */
