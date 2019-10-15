@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * Reads stings from file and saves objects of IsoscelesTriangle class with the largest area
  */
