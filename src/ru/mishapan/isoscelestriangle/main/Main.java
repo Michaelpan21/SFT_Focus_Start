@@ -1,7 +1,7 @@
-package ru.mishapan.IsoscelesTriangle.Main;
+package ru.mishapan.isoscelestriangle.main;
 
-import ru.mishapan.IsoscelesTriangle.FileReaderWriter.TriangleReader;
-import ru.mishapan.IsoscelesTriangle.FileReaderWriter.FileWriter;
+import ru.mishapan.isoscelestriangle.filereaderwriter.TriangleReader;
+import ru.mishapan.isoscelestriangle.filereaderwriter.FileWriter;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

@@ -1,6 +1,6 @@
-package ru.mishapan.IsoscelesTriangle.FileReaderWriter;
+package ru.mishapan.isoscelestriangle.filereaderwriter;
 
-import ru.mishapan.IsoscelesTriangle.IsoscelesTriangle;
+import ru.mishapan.isoscelestriangle.IsoscelesTriangle;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

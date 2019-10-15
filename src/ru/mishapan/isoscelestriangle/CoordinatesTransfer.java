@@ -1,4 +1,4 @@
-package ru.mishapan.IsoscelesTriangle;
+package ru.mishapan.isoscelestriangle;
 
 /**
  * Transfer coordinates

@@ -1,6 +1,6 @@
-package ru.mishapan.IsoscelesTriangle.FileReaderWriter;
+package ru.mishapan.isoscelestriangle.filereaderwriter;
 
-import ru.mishapan.IsoscelesTriangle.IsoscelesTriangle;
+import ru.mishapan.isoscelestriangle.IsoscelesTriangle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -78,13 +78,15 @@ public class TriangleReader {
             return;
         }
 
-        if (triangle.getArea() == list.get(0).getArea() &&
-                triangle.getCoordinates() != list.get(0).getCoordinates()) {
+        IsoscelesTriangle triangleFromList = list.get(0);
+
+        if (triangle.getArea() == triangleFromList.getArea() &&
+                triangle.getCoordinates() != triangleFromList.getCoordinates()) {
             list.add(triangle);
             return;
         }
 
-        if (triangle.getArea() > list.get(0).getArea()) {
+        if (triangle.getArea() > triangleFromList.getArea()) {
             list.clear();
             list.add(triangle);
         }

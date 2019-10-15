@@ -1,4 +1,4 @@
-package ru.mishapan.IsoscelesTriangle;
+package ru.mishapan.isoscelestriangle;
 
 /**
  * Contains side, base and coordinates if isosceles triangle
@@ -15,7 +15,8 @@ public class IsoscelesTriangle {
      * Transfers coordinates to sides
      * Checks if triangle is isosceles transfer sides to side and base.
      *
-     * @param coordinates array of doubles contains coordinates of triangle
+     * @param coordinates array of doubles contains coordinates of triangle. Array length must be six or throws
+     *                    exception
      */
     public IsoscelesTriangle(double[] coordinates) {
 

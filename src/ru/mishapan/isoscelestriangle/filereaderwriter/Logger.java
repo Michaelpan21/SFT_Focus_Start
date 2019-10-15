@@ -1,4 +1,4 @@
-package ru.mishapan.IsoscelesTriangle.FileReaderWriter;
+package ru.mishapan.isoscelestriangle.filereaderwriter;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
